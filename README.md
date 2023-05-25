@@ -12,20 +12,19 @@ With the rapid of autostereoscopic 3D monitors, through the specialized optical 
 
 ### Changelog
 
+* [May 2023] Fixes regarding links and filenames
 * [Aug 2020] Release [C++](https://github.com/m5823779/stereo_image_generator_from_single_image/tree/master/c%2B%2B) and [cython](https://github.com/m5823779/stereo_image_generator_from_single_image/tree/master/cython) version
 * [Aug 2020] Initial release of stereo image generation base on MiDaS v2.0
 
 ### Setup 
 
-1) Download the model weights [model-f45da743.pt](https://drive.google.com/file/d/1l_w6Jny_erNQpgc8-nzBa_adh4bBDaFw/view?usp=sharing) and place the
+1) Download the model weights [model-f45da743.pt](https://github.com/intel-isl/MiDaS/releases/download/v2/model-f46da743.pt) and place the
 file in the root folder.
 
-2) Set up dependencies: 
+2) Set up dependencies with CUDA: 
 
     ```shell
-	pip install pytorch  
-	pip install torchvision
-	pip install opencv_python
+	pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
 	```
 
    The code was tested with Cuda 10.1, Python 3.6.6, PyTorch 1.6.0, Torchvision 0.7.0 and OpenCV 3.4.0.12.
@@ -33,32 +32,32 @@ file in the root folder.
     
 ### Usage
 
-1) Place input images in the folder `example`.
+1) Place input images in the folder `example` e.g. from here [Male lion in Okonjima, Namibia](https://en.wikipedia.org/wiki/Lion)
 
 2) Run the model:
    
    (Generate depth map from image)
 
     ```shell
-    python depth_estimate_image.py
+    python depth_estimation_image.py
     ```
 	
 	(Generate depth map from camera)
 	
 	```shell
-    python depth_estimate_cam.py
+    python depth_estimation_cam.py
     ```
 	
 	(Generate stereo image from image)
 	
 	```shell
-    python SBS_generate_image.py
+    python stereo_generation_image.py
     ```
 	
 	(Generate stereo image from camera)
 	
 	```shell
-    python SBS_generate_cam.py
+    python stereo_generation_cam.py
     ```
 
 3) The resulting depth maps are written to the `depth` folder.
