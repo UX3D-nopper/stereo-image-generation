@@ -24,7 +24,7 @@ file in the root folder.
 2) Set up dependencies with CUDA: 
 
     ```shell
-	pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+	pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 	```
 
    The code was tested with Cuda 10.1, Python 3.6.6, PyTorch 1.6.0, Torchvision 0.7.0 and OpenCV 3.4.0.12.
